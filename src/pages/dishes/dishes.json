@@ -1,0 +1,136 @@
+{
+  "dish": [
+    {
+      "id": "1",
+      "name": "Margherita Pizza",
+      "price": 12.99,
+      "image": "https://images.pexels.com/photos/2619967/pexels-photo-2619967.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "description": "Classic pizza with fresh mozzarella, tomato sauce, and basil",
+      "category": "Fast Food",
+      "isVeg": true,
+      "isAvailable": true,
+      "rating": 4.5
+    },
+    {
+      "id": "2",
+      "name": "Chicken Biryani",
+      "price": 15.99,
+      "image": "https://images.pexels.com/photos/12737656/pexels-photo-12737656.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "description": "Aromatic basmati rice cooked with tender chicken and exotic spices",
+      "category": "Main Course",
+      "isVeg": false,
+      "isAvailable": true,
+      "rating": 4.8
+    },
+    {
+      "id": "3",
+      "name": "Masala Dosa",
+      "price": 8.99,
+      "image": "https://images.pexels.com/photos/5560763/pexels-photo-5560763.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "description": "Crispy crepe filled with spiced potato curry, served with chutney",
+      "category": "South Indian",
+      "isVeg": true,
+      "isAvailable": true,
+      "rating": 4.6
+    },
+    {
+      "id": "4",
+      "name": "Chocolate Lava Cake",
+      "price": 6.99,
+      "image": "https://images.pexels.com/photos/2693447/pexels-photo-2693447.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "description": "Warm chocolate cake with molten chocolate center",
+      "category": "Desserts",
+      "isVeg": true,
+      "isAvailable": true,
+      "rating": 4.7
+    },
+    {
+      "id": "5",
+      "name": "Fresh Mango Smoothie",
+      "price": 4.99,
+      "image": "https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2018/08/Mango-Smoothie-4-2.jpg",
+      "description": "Refreshing smoothie made with fresh mangoes and yogurt",
+      "category": "Beverages",
+      "isVeg": true,
+      "isAvailable": true,
+      "rating": 4.4
+    },
+    {
+      "id": "6",
+      "name": "Paneer Tikka",
+      "price": 11.99,
+      "image": "https://www.cookwithmanali.com/wp-content/uploads/2015/07/Restaurant-Style-Recipe-Paneer-Tikka.jpg",
+      "description": "Marinated cottage cheese cubes grilled to perfection",
+      "category": "Appetizers",
+      "isVeg": true,
+      "isAvailable": true,
+      "rating": 4.5
+    },
+    {
+      "id": "7",
+      "name": "Fish and Chips",
+      "price": 13.99,
+      "image": "https://www.thespruceeats.com/thmb/sdVTq0h7xZvJjPr6bE2fhh5M3NI=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/SES-best-fish-and-chips-recipe-434856-hero-01-27d8b57008414972822b866609d0af9b.jpg",
+      "description": "Crispy battered fish served with golden fries",
+      "category": "Fast Food",
+      "isVeg": false,
+      "isAvailable": false,
+      "rating": 4.3
+    },
+    {
+      "id": "8",
+      "name": "Samosa Chaat",
+      "price": 5.99,
+      "image": "https://b.zmtcdn.com/data/pictures/chains/9/20971369/21e576703869d306a21914819b0c6f25.jpeg?output-format=webp&fit=around|771.75:416.25&crop=771.75:416.25;*,*",
+      "description": "Crispy samosas topped with chutneys and yogurt",
+      "category": "Snacks",
+      "isVeg": true,
+      "isAvailable": true,
+      "rating": 4.2
+    },
+    {
+      "id": "9",
+      "name": "Grilled Salmon",
+      "price": 18.99,
+      "image": "https://www.thecookierookie.com/wp-content/uploads/2023/05/grilled-salmon-recipe-2-960x1200.jpg",
+      "description": "Fresh salmon fillet grilled with herbs and lemon",
+      "category": "Main Course",
+      "isVeg": false,
+      "isAvailable": true,
+      "rating": 4.9
+    },
+    {
+      "id": "10",
+      "name": "Idli Sambar",
+      "price": 7.99,
+      "image": "https://img.freepik.com/premium-photo/south-indian-breakfast-recipe-idly-idli-rice-cake-served-with-coconut-chutney-sambar-selective-focus_466689-9815.jpg?w=1060",
+      "description": "Steamed rice cakes served with lentil curry and coconut chutney",
+      "category": "South Indian",
+      "isVeg": true,
+      "isAvailable": true,
+      "rating": 4.4
+    },
+    {
+      "id": "11",
+      "name": "Caesar Salad",
+      "price": 9.99,
+      "image": "https://images.pexels.com/photos/2116094/pexels-photo-2116094.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "description": "Fresh romaine lettuce with parmesan cheese and croutons",
+      "category": "Appetizers",
+      "isVeg": true,
+      "isAvailable": true,
+      "rating": 4.1
+    },
+    {
+      "id": "12",
+      "name": "Butter Chicken",
+      "price": 16.99,
+      "image": "https://www.indianhealthyrecipes.com/wp-content/uploads/2023/04/butter-chicken-recipe.webp",
+      "description": "Tender chicken in rich, creamy tomato-based curry",
+      "category": "Main Course",
+      "isVeg": false,
+      "isAvailable": true,
+      "rating": 4.8
+    }
+  ]
+}

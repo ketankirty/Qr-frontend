@@ -1,0 +1,364 @@
+{
+  "menu": {
+    "Desserts": [
+      {
+        "id": 1,
+        "name": "Chocolate Lava Cake",
+        "image": "https://www.melskitchencafe.com/wp-content/uploads/2023/01/updated-lava-cakes8-1059x1536.webp",
+        "price": 120,
+        "description": "Warm chocolate cake with molten center"
+      },
+      {
+        "id": 2,
+        "name": "Ice Cream Sundae",
+        "image": "https://www.keep-calm-and-eat-ice-cream.com/wp-content/uploads/2022/08/Ice-cream-sundae-hero-10-1024x768.jpg",
+        "price": 90,
+        "description": "Vanilla ice cream with chocolate syrup and nuts"
+      },
+      {
+        "id": 3,
+        "name": "Tiramisu",
+        "image": "https://images.pexels.com/photos/6880219/pexels-photo-6880219.jpeg",
+        "price": 150,
+        "description": "Coffee-flavored Italian dessert"
+      },
+      {
+        "id": 4,
+        "name": "Brownie",
+        "image": "https://images.pexels.com/photos/887853/pexels-photo-887853.jpeg",
+        "price": 80,
+        "description": "Fudgy chocolate brownie with walnuts"
+      },
+      {
+        "id": 5,
+        "name": "Fruit Custard",
+        "image": "https://images.pexels.com/photos/1099680/pexels-photo-1099680.jpeg",
+        "price": 70,
+        "description": "Mixed fruits in creamy custard"
+      },
+      {
+        "id": 6,
+        "name": "Cheesecake",
+        "image": "https://images.pexels.com/photos/140831/pexels-photo-140831.jpeg",
+        "price": 140,
+        "description": "Classic New York-style cheesecake"
+      },
+      {
+        "id": 7,
+        "name": "Panna Cotta",
+        "image": "https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg",
+        "price": 130,
+        "description": "Creamy Italian dessert with berry sauce"
+      },
+      {
+        "id": 8,
+        "name": "Apple Pie",
+        "image": "https://images.pexels.com/photos/1070850/pexels-photo-1070850.jpeg",
+        "price": 110,
+        "description": "Flaky crust filled with cinnamon apple filling"
+      },
+      {
+        "id": 9,
+        "name": "Mousse",
+        "image": "https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg",
+        "price": 100,
+        "description": "Light and airy chocolate mousse"
+      },
+      {
+        "id": 10,
+        "name": "Caramel Pudding",
+        "image": "https://images.pexels.com/photos/1126728/pexels-photo-1126728.jpeg",
+        "price": 90,
+        "description": "Silky custard with caramel topping"
+      }
+    ],
+    "Snacks": [
+      {
+        "id": 11,
+        "name": "French Fries",
+        "image": "https://images.pexels.com/photos/1583884/pexels-photo-1583884.jpeg",
+        "price": 60,
+        "description": "Crispy potato fries served with ketchup"
+      },
+      {
+        "id": 12,
+        "name": "Samosa",
+        "image": "https://plus.unsplash.com/premium_photo-1695297516676-04a259917c03?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "price": 20,
+        "description": "Crispy pastry with spicy potato filling"
+      },
+      {
+        "id": 13,
+        "name": "Spring Rolls",
+        "image": "https://images.unsplash.com/photo-1679310290259-78d9eaa32700?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3ByaW5nJTIwcm9sbHxlbnwwfHwwfHx8MA%3D%3D",
+        "price": 50,
+        "description": "Vegetable rolls deep-fried to golden"
+      },
+      {
+        "id": 14,
+        "name": "Nachos",
+        "image": "https://www.onceuponachef.com/images/2024/02/beef-nachos-1112x1536.jpg",
+        "price": 70,
+        "description": "Tortilla chips with cheese and salsa"
+      },
+      {
+        "id": 15,
+        "name": " Aalu Pakora",
+        "image": "https://www.funfoodfrolic.com/wp-content/uploads/2021/09/Aloo-Pakora-2.jpg",
+        "price": 40,
+        "description": "Spiced vegetable fritters"
+      },
+      {
+        "id": 16,
+        "name": "Corn Chaat",
+        "image": "https://www.cookclickndevour.com/wp-content/uploads/2021/09/corn-chaat-recipe.jpg",
+        "price": 55,
+        "description": "Sweet corn with lemon, spices and herbs"
+      },
+      {
+        "id": 17,
+        "name": "Paneer Tikka",
+        "image": "https://orders.popskitchen.in/storage/2024/09/image-358.png",
+        "price": 90,
+        "description": "Grilled paneer cubes marinated in spices"
+      },
+      {
+        "id": 18,
+        "name": "Veg Cutlet",
+        "image": "https://www.cookwithmanali.com/wp-content/uploads/2021/04/Veg-Cutlet-500x500.jpg",
+        "price": 45,
+        "description": "Mashed veggie patties, crumb-fried"
+      },
+      {
+        "id": 19,
+        "name": "Cheese Balls",
+        "image": "https://www.funfoodfrolic.com/wp-content/uploads/2018/05/Chicken-Cheese-Balls.jpg",
+        "price": 60,
+        "description": "Fried cheese-filled snack"
+      },
+      {
+        "id": 20,
+        "name": "Stuffed Bread Rolls",
+        "image": "https://www.bylena.com/images/uploaded/600x_Rulouri-placinte-cu-varzabranza-599.jpg",
+        "price": 50,
+        "description": "Spiced potato filling inside fried bread rolls"
+      }
+    ],
+    "Fast Food": [
+      {
+        "id": 21,
+        "name": "Cheese Burger",
+        "image": "https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg",
+        "price": 150,
+        "description": "Beef burger with melted cheese and lettuce"
+      },
+      {
+        "id": 22,
+        "name": "Veg Pizza",
+        "image": "https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg",
+        "price": 180,
+        "description": "Thin crust pizza topped with fresh vegetables"
+      },
+      {
+        "id": 23,
+        "name": "Chicken Nuggets",
+        "image": "https://images.pexels.com/photos/60616/fried-chicken-chicken-fried-crunchy-60616.jpeg",
+        "price": 100,
+        "description": "Golden-fried chicken bites"
+      },
+      {
+        "id": 24,
+        "name": "Hot Dog",
+        "image": "https://www.cookingcarnival.com/wp-content/uploads/2022/04/Veg-hot-dog-5.jpg",
+        "price": 120,
+        "description": "Grilled sausage in a soft bun"
+      },
+      {
+        "id": 25,
+        "name": "Shawarma Roll",
+        "image": "https://www.licious.in/blog/wp-content/uploads/2020/12/Chicken-Shawarma.jpg",
+        "price": 130,
+        "description": "Spiced chicken wrap with garlic sauce"
+      },
+      {
+        "id": 26,
+        "name": "Chicken Burger",
+        "image": "https://images.pexels.com/photos/552056/pexels-photo-552056.jpeg",
+        "price": 140,
+        "description": "Fried chicken patty in a bun"
+      },
+      {
+        "id": 27,
+        "name": "Loaded Fries",
+        "image": "https://images.pexels.com/photos/1583884/pexels-photo-1583884.jpeg",
+        "price": 100,
+        "description": "Fries with cheese, mayo and toppings"
+      },
+      {
+        "id": 28,
+        "name": "Taco",
+        "image": "https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg",
+        "price": 90,
+        "description": "Soft shell taco with veggies and beans"
+      },
+      {
+        "id": 29,
+        "name": "Paneer Burger",
+        "image": "https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg",
+        "price": 130,
+        "description": "Grilled paneer patty with sauce"
+      },
+      {
+        "id": 30,
+        "name": "Pasta Alfredo",
+        "image": "https://images.aws.nestle.recipes/resized/432d4cbae30cd055066e6fa44cf0897c_Overhead_Pasta_Can_2020_HERO_1200_628.jpg",
+        "price": 160,
+        "description": "Creamy white sauce pasta with herbs"
+      }
+    ],
+    "Sweets": [
+      {
+        "id": 31,
+        "name": "Gulab Jamun",
+        "image": "https://i0.wp.com/www.chitrasfoodbook.com/wp-content/uploads/2016/10/gulab-jamun-using-mix.jpg?w=1200&ssl=1",
+        "price": 40,
+        "description": "Milk-solid-based sweet soaked in sugar syrup"
+      },
+      {
+        "id": 32,
+        "name": "Rasgulla",
+        "image": "https://www.palatesdesire.com/wp-content/uploads/2015/08/Rasgulla_recipe@Palates_desire-scaled.jpg",
+        "price": 35,
+        "description": "Spongy balls made from chhena in syrup"
+      },
+      {
+        "id": 33,
+        "name": "Kaju Katli",
+        "image": "https://static.toiimg.com/photo/55048826.cms",
+        "price": 80,
+        "description": "Cashew fudge with silver foil"
+      },
+      {
+        "id": 34,
+        "name": "Ladoo",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Laddu_Sweet.JPG/500px-Laddu_Sweet.JPG",
+        "price": 30,
+        "description": "Round sweet balls made of gram flour"
+      },
+      {
+        "id": 35,
+        "name": " Milk Barfi",
+        "image": "https://aartimadan.com/wp-content/uploads/2019/04/Suji-Barfi-1.jpg",
+        "price": 45,
+        "description": "Milk-based sweet with pistachio"
+      },
+      {
+        "id": 36,
+        "name": "Soan Papdi",
+        "image": "https://www.indianrecipeinfo.com/wp-content/uploads/2010/12/Soan-Papdi.jpg",
+        "price": 50,
+        "description": "Flaky sweet with ghee and nuts"
+      },
+      {
+        "id": 37,
+        "name": "Jalebi",
+        "image": "https://static.toiimg.com/thumb/53099699.cms?imgsize=182393&width=800&height=800",
+        "price": 25,
+        "description": "Crispy coiled sweet dipped in syrup"
+      },
+      {
+        "id": 38,
+        "name": "Peda",
+        "image": "https://www.cookclickndevour.com/wp-content/uploads/2018/05/peda-recipe-3.jpg",
+        "price": 35,
+        "description": "Soft and dense milk sweet"
+      },
+      {
+        "id": 39,
+        "name": "Mysore Pak",
+        "image": "https://www.shreemithai.com/cdn/shop/products/spl-mysore-pak-206182.jpg?v=1707820107&width=800",
+        "price": 40,
+        "description": "Gram flour sweet with ghee"
+      },
+      {
+        "id": 40,
+        "name": "Halwa",
+        "image": "https://i.ytimg.com/vi/6jagMZ70IJ4/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLANRiN5W8uW3fPXFlmAl3t4tFEBMQ",
+        "price": 50,
+        "description": "Rich, sweet pudding of semolina or carrot"
+      }
+    ],
+    "SouthIndian": [
+      {
+        "id": 41,
+        "name": "Masala Dosa",
+        "image": "https://images.pexels.com/photos/5560763/pexels-photo-5560763.jpeg",
+        "price": 90,
+        "description": "Crispy dosa filled with spiced potato"
+      },
+      {
+        "id": 42,
+        "name": "Idli with Sambar",
+        "image": "https://mayuris-jikoni.com/wp-content/uploads/2012/06/idli-sambar-1-copy.jpg",
+        "price": 60,
+        "description": "Steamed rice cakes with lentil soup"
+      },
+      {
+        "id": 43,
+        "name": "Medu Vada",
+        "image": "https://madhurasrecipe.com/wp-content/uploads/2021/12/poha_vada_featured.jpg",
+        "price": 50,
+        "description": "Crispy lentil fritters shaped like donuts"
+      },
+      {
+        "id": 44,
+        "name": "Plain Dosa",
+        "image": "https://www.awesomecuisine.com/wp-content/uploads/2009/06/Plain-Dosa.jpg",
+        "price": 70,
+        "description": "Classic thin dosa served with chutney"
+      },
+      {
+        "id": 45,
+        "name": "Rava Upma",
+        "image": "https://static.toiimg.com/thumb/84709540.cms?imgsize=221435&width=800&height=800",
+        "price": 55,
+        "description": "Semolina dish with mustard and curry leaves"
+      },
+      {
+        "id": 46,
+        "name": " Veg Pongal",
+        "image": "https://www.indianhealthyrecipes.com/wp-content/uploads/2021/01/pongal-ven-pongal-500x500.jpg",
+        "price": 65,
+        "description": "Rice and lentil khichdi with ghee"
+      },
+      {
+        "id": 47,
+        "name": "Uttapam",
+        "image": "https://www.indianhealthyrecipes.com/wp-content/uploads/2022/07/uttapam-recipe-swasthi.jpg",
+        "price": 75,
+        "description": "Thick dosa with chopped veggies"
+      },
+      {
+        "id": 48,
+        "name": "Appam with Stew",
+        "image": "https://www.sailusfood.com/wp-content/uploads/2013/06/appam-vegetable-stew.jpg",
+        "price": 100,
+        "description": "Rice pancake served with coconut veggie stew"
+      },
+      {
+        "id": 49,
+        "name": "Kesari Bath",
+        "image": "https://www.cookclickndevour.com/wp-content/uploads/2017/09/kesari-bath-recipe-c.jpg",
+        "price": 40,
+        "description": "Sweet semolina dessert flavored with saffron"
+      },
+      {
+        "id": 50,
+        "name": "Curd Rice",
+        "image": "https://palatesdesire.com/wp-content/uploads/2022/04/curd-rice-recipe-card@palates-desire.jpg",
+        "price": 50,
+        "description": "Cooling rice mixed with yogurt and tempered spices"
+      }
+    ]
+  }
+}
