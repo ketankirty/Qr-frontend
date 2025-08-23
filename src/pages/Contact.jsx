@@ -14,25 +14,23 @@ function Contact() {
   const [showmessage, setShowmessage] = useState(false);
 
   const onSubmit = async (data) => {
-    try {
-      const res = await fetch("https://qr-backend-ywri.onrender.com/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, mail, phone, subject, message }),
-      });
+     try {
+    const res = await fetch("https://qr-backend-ywri.onrender.com/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),  // <-- send full form data
+    });
 
-      const result = await res.json();
-      console.log("✅ Backend Response:", result);
+    const result = await res.json();
+    console.log("✅ Backend Response:", result);
 
-      setSubmitted(true);
-      setName("");
-      setEmail("");
-      setMessage("");
+    setShowmessage(true);  // show success message
+    reset();               // clear form fields
 
-      setTimeout(() => setSubmitted(false), 3000);
-    } catch (err) {
-      console.error("❌ Error submitting contact:", err);
-    }
+    setTimeout(() => setShowmessage(false), 3000);
+  } catch (err) {
+    console.error("❌ Error submitting contact:", err);
+  }
   }
 
   return (

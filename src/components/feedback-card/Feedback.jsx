@@ -12,12 +12,7 @@ function Feedback() {
       const res = await fetch("https://qr-backend-ywri.onrender.com/api/feedback", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name,     // must be collected from form
-          email,    // must be collected from form
-          rating,
-          message
-        }),
+        body: JSON.stringify({ rating, message }),
       });
 
       const result = await res.json();
@@ -26,55 +21,56 @@ function Feedback() {
       setSubmitted(true);
       setMessage("");
       setRating(0);
-      setName("");   // clear input
-      setEmail("");  // clear input
 
       setTimeout(() => setSubmitted(false), 3000);
     } catch (err) {
       console.error("❌ Error submitting feedback:", err);
     }
-
   };
 
   return (
-    <form onSubmit={handleSubmit} className="p-4 shadow-lg rounded-xl bg-white">
+    <div className="p-4 shadow-lg rounded-2xl bg-gradient-to-t from-orange-100 to-yellow-100 w-full max-w-xl mx-auto">
+      <h2 className="text-2xl font-bold mb-3 text-center">We Value Your Feedback</h2>
+
       {submitted && (
-        <div className="bg-green-300 p-2 rounded mb-2 text-center">
-          ✅ Thank you for your feedback!
+        <div className="bg-green-400 text-white p-2 mb-3 rounded-lg text-center">
+          ✅ Thanks for your feedback!
         </div>
       )}
 
-      {/* Rating stars */}
-      <div className="flex gap-2 mb-4">
-        {[1, 2, 3, 4, 5].map((star) => (
-          <span
-            key={star}
-            onClick={() => setRating(star)}
-            className={`cursor-pointer text-3xl ${rating >= star ? "text-yellow-500" : "text-gray-400"
-              }`}
-          >
-            ★
-          </span>
-        ))}
-      </div>
+      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+        {/* Rating */}
+        <div className="flex justify-center gap-2">
+          {[1, 2, 3, 4, 5].map((star) => (
+            <button
+              key={star}
+              type="button"
+              onClick={() => setRating(star)}
+              className={`text-3xl ${star <= rating ? "text-yellow-500" : "text-gray-400"}`}
+            >
+              ★
+            </button>
+          ))}
+        </div>
 
-      {/* Message */}
-      <textarea
-        className="w-full border-2 rounded-lg p-2 mb-4"
-        placeholder="Write your feedback..."
-        value={message}
-        onChange={(e) => setMessage(e.target.value)}
-        required
-      />
+        {/* Message */}
+        <textarea
+          className="border-2 rounded-lg p-2 h-28"
+          placeholder="Write your feedback here..."
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          required
+        ></textarea>
 
-      {/* Submit */}
-      <button
-        type="submit"
-        className="border-2 px-6 py-2 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-lg flex items-center gap-2"
-      >
-        <Send size={20} /> Submit Feedback
-      </button>
-    </form>
+        {/* Submit */}
+        <button
+          type="submit"
+          className="bg-gradient-to-r from-orange-500 to-red-500 text-white py-2 rounded-lg flex items-center justify-center gap-2 hover:scale-105 transition-transform"
+        >
+          <Send size={18} /> Submit Feedback
+        </button>
+      </form>
+    </div>
   );
 }
 
