@@ -15,23 +15,23 @@ function Contact() {
 
   const onSubmit = async (data) => {
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch("https://qr-backend-ywri.onrender.com/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ name, mail, phone, subject, message }),
       });
 
       const result = await res.json();
       console.log("✅ Backend Response:", result);
 
-      reset();
-      setShowmessage(true);
+      setSubmitted(true);
+      setName("");
+      setEmail("");
+      setMessage("");
 
-      setTimeout(() => {
-        setShowmessage(false);
-      }, 3000);
+      setTimeout(() => setSubmitted(false), 3000);
     } catch (err) {
-      console.error("❌ Error submitting contact form:", err);
+      console.error("❌ Error submitting contact:", err);
     }
   }
 
@@ -44,7 +44,7 @@ function Contact() {
 
       {/* Main container */}
       <div className=" flex flex-col lg:flex-row   gap-4 w-full">
-        
+
         {/* get in touch */}
         <div className="p-5 shadow-lg rounded-2xl w-full lg:w-1/2 mb-2">
           <span className="font-bold text-2xl">Get in Touch</span>
@@ -105,21 +105,21 @@ function Contact() {
           </div>
 
           {/* useform hook */}
-          <form 
-            onSubmit={handleSubmit(onSubmit)} 
+          <form
+            onSubmit={handleSubmit(onSubmit)}
             className="gap-3 p-3 grid grid-cols-1 md:grid-cols-2 w-full"
           >
             {/* name */}
             <div>
               <label className="font-semibold text-lg md:text-2xl">Your name*</label><br />
-              <input 
-                type="text" 
+              <input
+                type="text"
                 className="w-full border-2 rounded-lg p-2"
                 placeholder='Enter your full name'
                 {...register("name", {
                   required: { value: true, message: 'This field is required.' },
                   minLength: { value: 3, message: 'Min length is 3' },
-                })} 
+                })}
               />
               {errors.name && <span className="text-red-700 text-sm">{errors.name.message}</span>}
             </div>
@@ -127,13 +127,13 @@ function Contact() {
             {/* email */}
             <div>
               <label className="font-semibold  text-lg md:text-2xl">Email Address*</label><br />
-              <input 
-                type="email" 
+              <input
+                type="email"
                 className="w-full border-2 rounded-lg p-2"
                 placeholder='Enter your email address'
                 {...register("email", {
                   required: { value: true, message: 'This field is required.' }
-                })} 
+                })}
               />
               {errors.email && <span className="text-red-700 text-sm">{errors.email.message}</span>}
             </div>
@@ -141,8 +141,8 @@ function Contact() {
             {/* phone */}
             <div>
               <label className="font-semibold text-lg md:text-2xl">Phone Number</label><br />
-              <input 
-                type="tel" 
+              <input
+                type="tel"
                 className="w-full border-2 rounded-lg p-2"
                 placeholder="Enter your phone number"
                 maxLength={10}
@@ -154,8 +154,8 @@ function Contact() {
                   },
                 })}
                 onInput={(e) => {
-                  e.target.value = e.target.value.replace(/[^0-9]/g, ""); 
-                }} 
+                  e.target.value = e.target.value.replace(/[^0-9]/g, "");
+                }}
               />
               {errors.phone && <span className="text-red-600 text-sm">{errors.phone.message}</span>}
             </div>
@@ -163,7 +163,7 @@ function Contact() {
             {/* subject */}
             <div>
               <label className="font-semibold text-lg md:text-2xl">Subject*</label><br />
-              <select 
+              <select
                 className="w-full border-2 rounded-lg p-2"
                 {...register("subject", {
                   required: { value: true, message: 'Choose a subject.' }
@@ -182,7 +182,7 @@ function Contact() {
             {/* text area */}
             <div className="md:col-span-2">
               <label className="font-semibold text-lg md:text-2xl">Message*</label><br />
-              <textarea 
+              <textarea
                 className="border-2 rounded-lg h-52 w-full p-2"
                 placeholder="How can we help you........."
                 {...register("message", {
@@ -195,7 +195,7 @@ function Contact() {
 
             {/* submit button */}
             <div className="md:col-span-2 flex justify-center">
-              <button 
+              <button
                 disabled={isSubmitting}
                 type="submit"
                 className="border-2  px-6 py-2 mt-2 bg-gradient-to-r from-red-500 to-orange-500 flex items-center gap-2 font-semibold transition-transform duration-200 hover:scale-105 md:rounded-2xl"

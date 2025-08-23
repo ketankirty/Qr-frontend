@@ -9,10 +9,15 @@ function Feedback() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("/api/feedback", {
+      const res = await fetch("https://qr-backend-ywri.onrender.com/api/feedback", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ rating, message }),
+        body: JSON.stringify({
+          name,     // must be collected from form
+          email,    // must be collected from form
+          rating,
+          message
+        }),
       });
 
       const result = await res.json();
@@ -21,11 +26,14 @@ function Feedback() {
       setSubmitted(true);
       setMessage("");
       setRating(0);
+      setName("");   // clear input
+      setEmail("");  // clear input
 
       setTimeout(() => setSubmitted(false), 3000);
     } catch (err) {
       console.error("❌ Error submitting feedback:", err);
     }
+
   };
 
   return (
@@ -42,9 +50,8 @@ function Feedback() {
           <span
             key={star}
             onClick={() => setRating(star)}
-            className={`cursor-pointer text-3xl ${
-              rating >= star ? "text-yellow-500" : "text-gray-400"
-            }`}
+            className={`cursor-pointer text-3xl ${rating >= star ? "text-yellow-500" : "text-gray-400"
+              }`}
           >
             ★
           </span>
