@@ -1,77 +1,158 @@
-import { useState } from "react";
-import { Send } from "lucide-react";
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
+import { Star } from "lucide-react";
+import step from "../feedback-card/stepdown.jpg";
 
-function Feedback() {
-  const [rating, setRating] = useState(0);
-  const [message, setMessage] = useState("");
+const categories = [
+  "Food Quality",
+  "Service",
+  "Ambiance",
+  "Value for Money",
+  "Overall Experience",
+];
+
+const StarRatingForm = () => {
+  const { register, handleSubmit, reset } = useForm();
+  const [ratings, setRatings] = useState({
+    "Food Quality": 0,
+    Service: 0,
+    Ambiance: 0,
+    "Value for Money": 0,
+    "Overall Experience": 0,
+  });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleRating = (category, value) => {
+    setRatings((prev) => ({ ...prev, [category]: value }));
+  };
+
+  const onSubmit = async (data) => {
+    const feedbackData = {
+      name: data.name,
+      message: data.message,
+      foodQuality: ratings["Food Quality"],
+      service: ratings["Service"],
+      ambiance: ratings["Ambiance"],
+      valueForMoney: ratings["Value for Money"],
+      overallExperience: ratings["Overall Experience"],
+    };
+
     try {
-      const res = await fetch("https://qr-backend-ywri.onrender.com/api/feedback", {
+      const res = await fetch("http://localhost:5000/api/feedback", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ rating, message }),
+        body: JSON.stringify(feedbackData),
       });
 
-      const result = await res.json();
-      console.log("✅ Backend Response:", result);
+      if (!res.ok) throw new Error("Failed to submit feedback");
 
+      reset();
+      setRatings({
+        "Food Quality": 0,
+        Service: 0,
+        Ambiance: 0,
+        "Value for Money": 0,
+        "Overall Experience": 0,
+      });
       setSubmitted(true);
-      setMessage("");
-      setRating(0);
-
-      setTimeout(() => setSubmitted(false), 3000);
+      setTimeout(() => setSubmitted(false), 5000);
     } catch (err) {
       console.error("❌ Error submitting feedback:", err);
     }
   };
 
   return (
-    <div className="p-4 shadow-lg rounded-2xl bg-gradient-to-t from-orange-100 to-yellow-100 w-full max-w-xl mx-auto">
-      <h2 className="text-2xl font-bold mb-3 text-center">We Value Your Feedback</h2>
+    <div className="flex flex-col md:flex-row min-h-screen">
+      {/* Left Image */}
+      <div className="w-full md:w-1/2 h-64 md:h-auto">
+        <img
+          src={step}
+          alt="Feedback"
+          className="w-full h-full object-cover rounded-t-2xl md:rounded-tl-2xl md:rounded-bl-2xl"
+        />
+      </div>
 
-      {submitted && (
-        <div className="bg-green-400 text-white p-2 mb-3 rounded-lg text-center">
-          ✅ Thanks for your feedback!
-        </div>
-      )}
+      {/* Right Form */}
+      <div className="w-full md:w-1/2 flex flex-col justify-center items-center bg-gray-50 p-8 rounded-b-2xl md:rounded-tr-2xl md:rounded-br-2xl shadow-lg">
+        <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">
+          We Value Your Feedback
+        </h2>
 
-      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-        {/* Rating */}
-        <div className="flex justify-center gap-2">
-          {[1, 2, 3, 4, 5].map((star) => (
-            <button
-              key={star}
-              type="button"
-              onClick={() => setRating(star)}
-              className={`text-3xl ${star <= rating ? "text-yellow-500" : "text-gray-400"}`}
-            >
-              ★
-            </button>
-          ))}
-        </div>
-
-        {/* Message */}
-        <textarea
-          className="border-2 rounded-lg p-2 h-28"
-          placeholder="Write your feedback here..."
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          required
-        ></textarea>
-
-        {/* Submit */}
-        <button
-          type="submit"
-          className="bg-gradient-to-r from-orange-500 to-red-500 text-white py-2 rounded-lg flex items-center justify-center gap-2 hover:scale-105 transition-transform"
+        <form
+          className="w-full max-w-md space-y-6"
+          onSubmit={handleSubmit(onSubmit)}
         >
-          <Send size={18} /> Submit Feedback
-        </button>
-      </form>
+          {/* Name Input */}
+          <div>
+            <label className="block text-gray-700 font-medium mb-2">
+              Your Name
+            </label>
+            <input
+              type="text"
+              {...register("name", { required: true })}
+              placeholder="Enter your name"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400"
+            />
+          </div>
+
+          {/* Star Ratings */}
+          <div className="space-y-4">
+            {categories.map((category) => (
+              <div key={category}>
+                <span className="block font-semibold text-gray-700 mb-1">
+                  {category}
+                </span>
+                <div className="flex space-x-1">
+                  {[...Array(5)].map((_, index) => {
+                    const starValue = index + 1;
+                    return (
+                      <Star
+                        key={index}
+                        size={28}
+                        className={`cursor-pointer ${starValue <= ratings[category]
+                            ? "text-yellow-400"
+                            : "text-gray-300"
+                          }`}
+                        onClick={() => handleRating(category, starValue)}
+                      />
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Message Input */}
+          <div>
+            <label className="block text-gray-700 font-medium mb-2">
+              Your Feedback
+            </label>
+            <textarea
+              {...register("message", { required: true })}
+              placeholder="Write your feedback here..."
+              rows="4"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400"
+            ></textarea>
+          </div>
+
+          {/* Submit Button */}
+          <button
+            type="submit"
+            className="w-full bg-yellow-400 hover:bg-yellow-500 text-white font-semibold py-3 rounded-lg transition duration-300"
+          >
+            Submit Feedback
+          </button>
+
+          {/* Thank You Message */}
+          {submitted && (
+            <p className="text-green-600 font-semibold text-center mt-4">
+              Thanks for your valuable feedback!
+            </p>
+          )}
+        </form>
+      </div>
     </div>
   );
-}
+};
 
-export default Feedback;
+export default StarRatingForm;
