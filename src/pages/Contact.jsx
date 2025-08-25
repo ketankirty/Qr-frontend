@@ -14,23 +14,24 @@ function Contact() {
   const [showmessage, setShowmessage] = useState(false);
 
   const onSubmit = async (data) => {
-     try {
-    const res = await fetch("https://qr-backend-ywri.onrender.com/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),  // <-- send full form data
-    });
+    try {
+      const res = await fetch("http://localhost:5000/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
 
-    const result = await res.json();
-    console.log("✅ Backend Response:", result);
 
-    setShowmessage(true);  // show success message
-    reset();               // clear form fields
+      const result = await res.json();
+      console.log("✅ Backend Response:", result);
 
-    setTimeout(() => setShowmessage(false), 3000);
-  } catch (err) {
-    console.error("❌ Error submitting contact:", err);
-  }
+      setShowmessage(true);  // show success message
+      reset();               // clear form fields
+
+      setTimeout(() => setShowmessage(false), 3000);
+    } catch (err) {
+      console.error("❌ Error submitting contact:", err);
+    }
   }
 
   return (
@@ -90,7 +91,7 @@ function Contact() {
 
         {/* message */}
         <div className="p-4 shadow-lg rounded-2xl mb-2 bg-gradient-to-t from-sky-200 to-sky-300 w-full lg:w-1/2">
-          <div className="flex items-center flex-col justify-center p-4 gap-2 rounded-2xl m-2">
+          <div className="flex items-center flex-col justify-center p-2 gap-2 rounded-2xl ">
             <div className="flex items-center gap-2">
               <span className="text-red-500"><MessageCircle size={30} /></span>
               <span className="font-bold text-2xl">Send us a Message</span>
@@ -181,7 +182,7 @@ function Contact() {
             <div className="md:col-span-2">
               <label className="font-semibold text-lg md:text-2xl">Message*</label><br />
               <textarea
-                className="border-2 rounded-lg h-52 w-full p-2"
+                className="border-2 rounded-lg h-32 w-full p-2"
                 placeholder="How can we help you........."
                 {...register("message", {
                   required: { value: true, message: 'This field is required.' },
