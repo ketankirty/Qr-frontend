@@ -106,7 +106,7 @@ function Contact() {
           {/* useform hook */}
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="gap-3 p-3 grid grid-cols-1 md:grid-cols-2 w-full" netlify
+            className="gap-3 p-3 grid grid-cols-1 md:grid-cols-2 w-full" method="POST" data-netlify="true"
           >
             {/* name */}
             <div>
